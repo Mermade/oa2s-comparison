@@ -14,6 +14,10 @@ Disclaimer: the author of this repository and the blog post discussing the compa
 
 Because `shins` uses [markdown-it](https://github.com/markdown-it/markdown-it) as it's markdown processor, there may be differences in the rendered HTML compared to that produced by Ruby Slate.
 
+Each tool may be optimised for a particular Slate CSS theme. This is not taken into account here.
+
+Only the example `petstore.json` has been used so far to compare each tool, which may not demonstrate all features to best effect.
+
 ## TODO
 
 * Add PHP [swagger2slate](https://github.com/E96/swagger2slate)
