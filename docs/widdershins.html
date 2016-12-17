@@ -1,0 +1,2691 @@
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Swagger Petstore v1.0.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+      <script src="pub/js/shins.js"></script>
+
+    
+  </head>
+
+  <body class="" data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;html&quot;,&quot;javascript&quot;,&quot;python&quot;,&quot;ruby&quot;,&quot;java&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png">
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="source/images/logo.png">
+      
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="html">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">Node.JS</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc">
+      </div>
+      
+        <ul class="toc-footer">
+          
+            <li><a href="http://swagger.io">Find out more about Swagger</a></li>
+          
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="swagger-petstore-v1.0.0">Swagger Petstore v1.0.0</h1>
+<p>This is a sample server Petstore server.  You can find out more about Swagger at <a href="http://swagger.io">http://swagger.io</a> or on <a href="http://swagger.io/irc/">irc.freenode.net, #swagger</a>.  For this sample, you can use the api key <code>special-key</code> to test the authorization filters.</p>
+<p>Base URL = <a href="http://petstore.swagger.io/v2">http://petstore.swagger.io/v2</a></p>
+<p><a href="http://swagger.io/terms/">Terms of service</a>
+Email: <a href="mailto:apiteam@swagger.io">Support</a>
+License: <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a></p>
+<h1 id="authentication">Authentication</h1>
+<ul>
+<li>
+<p>oAuth2 authentication.</p>
+</li>
+<li>
+<p>Flow: implicit</p>
+</li>
+<li>
+<p>Authorization URL = <a href="http://petstore.swagger.io/oauth/dialog">http://petstore.swagger.io/oauth/dialog</a></p>
+</li>
+<li>
+<p>Scope: write:pets = modify pets in your account</p>
+</li>
+<li>
+<p>Scope: read:pets = read your pets</p>
+</li>
+</ul>
+<ul>
+<li>API Key</li>
+</ul>
+<ul>
+<li>Parameter Name: <strong>api_key</strong>, in: header.</li>
+</ul>
+<h1 id="pet">pet</h1>
+<p>Everything about your Pets</p>
+<p><a href="http://swagger.io">Find out more</a></p>
+<h2 id="addpet">addPet</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/pet
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/pet</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span>
+<span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /pet</code></p>
+<p><em>Add a new pet to the store</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Pet object that needs to be added to the store</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">category</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"doggie"</span></span>,
+  "<span class="hljs-attribute">photoUrls</span>": <span class="hljs-value">[
+    <span class="hljs-string">"string"</span>
+  ]</span>,
+  "<span class="hljs-attribute">tags</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"available"</span>
+</span>}
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">Pet</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">category</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">category</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>doggie<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">photoUrls</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">photoUrls</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tags</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tags</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>available<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Pet</span>&gt;</span>
+</code></pre>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>Invalid input</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h2 id="updatepet">updatePet</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X put http://petstore.swagger.io/v2/pet
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">PUT <span class="hljs-string">http://petstore.swagger.io/v2/pet</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span>
+<span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>,
+    method: <span class="hljs-string">'put'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>, { method: <span class="hljs-string">'PUT'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.put <span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.put(<span class="hljs-string">'http://petstore.swagger.io/v2/pet'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"PUT"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>PUT /pet</code></p>
+<p><em>Update an existing pet</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Pet object that needs to be added to the store</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">category</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"doggie"</span></span>,
+  "<span class="hljs-attribute">photoUrls</span>": <span class="hljs-value">[
+    <span class="hljs-string">"string"</span>
+  ]</span>,
+  "<span class="hljs-attribute">tags</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"available"</span>
+</span>}
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">Pet</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">category</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">category</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>doggie<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">photoUrls</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">photoUrls</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tags</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tags</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>available<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Pet</span>&gt;</span>
+</code></pre>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Pet not found</td>
+</tr>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>Validation exception</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h2 id="findpetsbystatus">findPetsByStatus</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/pet/findByStatus
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/pet/findByStatus</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByStatus'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByStatus'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByStatus'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByStatus'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet/findByStatus"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /pet/findByStatus</code></p>
+<p><em>Finds Pets by status</em></p>
+<p>Multiple status values can be provided with comma separated strings</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>query</td>
+<td>array</td>
+<td>true</td>
+<td>Status values that need to be considered for filter</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid status value</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">category</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"doggie"</span></span>,
+    "<span class="hljs-attribute">photoUrls</span>": <span class="hljs-value">[
+      <span class="hljs-string">"string"</span>
+    ]</span>,
+    "<span class="hljs-attribute">tags</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    ]</span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"available"</span>
+  </span>}
+]
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">category</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">category</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>doggie<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">photoUrls</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">photoUrls</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">tags</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">tags</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>available<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+</code></pre>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h2 id="findpetsbytags">findPetsByTags</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/pet/findByTags
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/pet/findByTags</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByTags'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByTags'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByTags'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/findByTags'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet/findByTags"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /pet/findByTags</code></p>
+<p><em>Finds Pets by tags</em></p>
+<p>Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tags</td>
+<td>query</td>
+<td>array</td>
+<td>true</td>
+<td>Tags to filter by</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid tag value</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">category</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"doggie"</span></span>,
+    "<span class="hljs-attribute">photoUrls</span>": <span class="hljs-value">[
+      <span class="hljs-string">"string"</span>
+    ]</span>,
+    "<span class="hljs-attribute">tags</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    ]</span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"available"</span>
+  </span>}
+]
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">category</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">category</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>doggie<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">photoUrls</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">photoUrls</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">tags</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">tags</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>available<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+</code></pre>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h2 id="getpetbyid">getPetById</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/pet/{petId}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/pet/{petId}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet/{petId}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /pet/{petId}</code></p>
+<p><em>Find pet by ID</em></p>
+<p>Returns a single pet</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>petId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>ID of pet to return</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Pet not found</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">category</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"doggie"</span></span>,
+  "<span class="hljs-attribute">photoUrls</span>": <span class="hljs-value">[
+    <span class="hljs-string">"string"</span>
+  ]</span>,
+  "<span class="hljs-attribute">tags</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"available"</span>
+</span>}
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">Pet</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">category</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">category</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>doggie<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">photoUrls</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">photoUrls</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tags</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tags</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>available<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Pet</span>&gt;</span>
+</code></pre>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+<h2 id="updatepetwithform">updatePetWithForm</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/pet/{petId}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/pet/{petId}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/x-www-form-urlencoded</span>
+<span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet/{petId}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /pet/{petId}</code></p>
+<p><em>Updates a pet in the store with form data</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>petId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>ID of pet that needs to be updated</td>
+</tr>
+<tr>
+<td>name</td>
+<td>formData</td>
+<td>string</td>
+<td>false</td>
+<td>Updated name of the pet</td>
+</tr>
+<tr>
+<td>status</td>
+<td>formData</td>
+<td>string</td>
+<td>false</td>
+<td>Updated status of the pet</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>Invalid input</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h2 id="deletepet">deletePet</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X delete http://petstore.swagger.io/v2/pet/{petId}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">DELETE <span class="hljs-string">http://petstore.swagger.io/v2/pet/{petId}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>,
+    method: <span class="hljs-string">'delete'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, { method: <span class="hljs-string">'DELETE'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.delete <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.delete(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet/{petId}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"DELETE"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>DELETE /pet/{petId}</code></p>
+<p><em>Deletes a pet</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_key</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>petId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>Pet id to delete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Pet not found</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h2 id="uploadfile">uploadFile</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/pet/{petId}/uploadImage
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/pet/{petId}/uploadImage</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span>
+<span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span>
+</code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}/uploadImage'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}/uploadImage'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}/uploadImage'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/pet/{petId}/uploadImage'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/pet/{petId}/uploadImage"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /pet/{petId}/uploadImage</code></p>
+<p><em>uploads an image</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>petId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>ID of pet to update</td>
+</tr>
+<tr>
+<td>additionalMetadata</td>
+<td>formData</td>
+<td>string</td>
+<td>false</td>
+<td>Additional data to pass to server</td>
+</tr>
+<tr>
+<td>file</td>
+<td>formData</td>
+<td>file</td>
+<td>false</td>
+<td>file to upload</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+</span>}
+</code></pre>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: write:pets read:pets )
+</aside>
+<h1 id="store">store</h1>
+<p>Access to Petstore orders</p>
+<h2 id="getinventory">getInventory</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/store/inventory
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/store/inventory</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/store/inventory'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/store/inventory'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/store/inventory'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/store/inventory'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/store/inventory"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /store/inventory</code></p>
+<p><em>Returns pet inventories by status</em></p>
+<p>Returns a map of status codes to quantities</p>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">property1</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">property2</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+</span>}
+</code></pre>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+<h2 id="placeorder">placeOrder</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/store/order
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/store/order</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/store/order'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/store/order'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/store/order'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/store/order'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/store/order"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /store/order</code></p>
+<p><em>Place an order for a pet</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>order placed for purchasing the pet</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid Order</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">petId</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">quantity</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">shipDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-12-17T13:52:07Z"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"placed"</span></span>,
+  "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">Order</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">petId</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">petId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">quantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">quantity</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">shipDate</span>&gt;</span>2016-12-17T13:52:07Z<span class="hljs-tag">&lt;/<span class="hljs-title">shipDate</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>placed<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">complete</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-title">complete</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Order</span>&gt;</span>
+</code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="getorderbyid">getOrderById</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/store/order/{orderId}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/store/order/{orderId}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/store/order/{orderId}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /store/order/{orderId}</code></p>
+<p><em>Find purchase order by ID</em></p>
+<p>For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>ID of pet that needs to be fetched</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Order not found</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">petId</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">quantity</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">shipDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-12-17T13:52:07Z"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"placed"</span></span>,
+  "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">Order</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">petId</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">petId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">quantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">quantity</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">shipDate</span>&gt;</span>2016-12-17T13:52:07Z<span class="hljs-tag">&lt;/<span class="hljs-title">shipDate</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">status</span>&gt;</span>placed<span class="hljs-tag">&lt;/<span class="hljs-title">status</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">complete</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-title">complete</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Order</span>&gt;</span>
+</code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="deleteorder">deleteOrder</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X delete http://petstore.swagger.io/v2/store/order/{orderId}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">DELETE <span class="hljs-string">http://petstore.swagger.io/v2/store/order/{orderId}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>,
+    method: <span class="hljs-string">'delete'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>, { method: <span class="hljs-string">'DELETE'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.delete <span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.delete(<span class="hljs-string">'http://petstore.swagger.io/v2/store/order/{orderId}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/store/order/{orderId}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"DELETE"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>DELETE /store/order/{orderId}</code></p>
+<p><em>Delete purchase order by ID</em></p>
+<p>For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>ID of the order that needs to be deleted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Order not found</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="user">user</h1>
+<p>Operations about user</p>
+<p><a href="http://swagger.io">Find out more about our store</a></p>
+<h2 id="createuser">createUser</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/user
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/user</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/user'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/user'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /user</code></p>
+<p><em>Create user</em></p>
+<p>This can only be done by the logged in user.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Created user object</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>successful operation</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="createuserswitharrayinput">createUsersWithArrayInput</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/user/createWithArray
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/user/createWithArray</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithArray'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithArray'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithArray'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithArray'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/createWithArray"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /user/createWithArray</code></p>
+<p><em>Creates list of users with given input array</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>List of user object</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>successful operation</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="createuserswithlistinput">createUsersWithListInput</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X post http://petstore.swagger.io/v2/user/createWithList
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">POST <span class="hljs-string">http://petstore.swagger.io/v2/user/createWithList</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithList'</span>,
+    method: <span class="hljs-string">'post'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithList'</span>, { method: <span class="hljs-string">'POST'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.post <span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithList'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.post(<span class="hljs-string">'http://petstore.swagger.io/v2/user/createWithList'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/createWithList"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"POST"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>POST /user/createWithList</code></p>
+<p><em>Creates list of users with given input array</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>List of user object</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>successful operation</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="loginuser">loginUser</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/user/login
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/user/login</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/login'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/login'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/user/login'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/user/login'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/login"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /user/login</code></p>
+<p><em>Logs user into the system</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>The user name for login</td>
+</tr>
+<tr>
+<td>password</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>The password for login in clear text</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid username/password supplied</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-headers">Response Headers</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Header</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>X-Rate-Limit</td>
+<td>integer</td>
+<td>int32</td>
+<td>calls per hour allowed by the user</td>
+</tr>
+<tr>
+<td>200</td>
+<td>X-Expires-After</td>
+<td>string</td>
+<td>date-time</td>
+<td>date in UTC when token expires</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code><span class="hljs-string">"string"</span>
+</code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="logoutuser">logoutUser</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/user/<span class="hljs-built_in">logout</span>
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/user/logout</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/logout'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/logout'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/user/logout'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/user/logout'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/logout"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /user/logout</code></p>
+<p><em>Logs out current logged in user session</em></p>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>successful operation</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="getuserbyname">getUserByName</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X get http://petstore.swagger.io/v2/user/{username}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">GET <span class="hljs-string">http://petstore.swagger.io/v2/user/{username}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>,
+    method: <span class="hljs-string">'get'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, { method: <span class="hljs-string">'GET'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.get <span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.get(<span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/{username}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>GET /user/{username}</code></p>
+<p><em>Get user by user name</em></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The name that needs to be fetched. Use user1 for testing.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>successful operation</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid username supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>User not found</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json"><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">firstName</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">lastName</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">phone</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+  "<span class="hljs-attribute">userStatus</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+</span>}
+</code></pre>
+<pre class="highlight xml"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">User</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">username</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">username</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">firstName</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">firstName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">lastName</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">lastName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">email</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">email</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">password</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">password</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">phone</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-title">phone</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">userStatus</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">userStatus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">User</span>&gt;</span>
+</code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="updateuser">updateUser</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X put http://petstore.swagger.io/v2/user/{username}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">PUT <span class="hljs-string">http://petstore.swagger.io/v2/user/{username}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>,
+    method: <span class="hljs-string">'put'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, { method: <span class="hljs-string">'PUT'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.put <span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.put(<span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/{username}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"PUT"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>PUT /user/{username}</code></p>
+<p><em>Updated user</em></p>
+<p>This can only be done by the logged in user.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>name that need to be updated</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Updated user object</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid user supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>User not found</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="deleteuser">deleteUser</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X delete http://petstore.swagger.io/v2/user/{username}
+</code></pre>
+<pre class="highlight http"><code><span class="hljs-request">DELETE <span class="hljs-string">http://petstore.swagger.io/v2/user/{username}</span> HTTP/1.1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">petstore.swagger.io</span>
+
+<span class="http"><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/xml</span>
+</span></code></pre>
+<pre class="highlight html"><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $.ajax({
+    url: <span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>,
+    method: <span class="hljs-string">'delete'</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+    }
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+fetch(<span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, { method: <span class="hljs-string">'DELETE'</span>})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+result = <span class="hljs-constant">RestClient</span>.delete <span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, <span class="hljs-symbol">params:</span>
+  {
+    <span class="hljs-comment"># TODO</span>
+  }
+
+p <span class="hljs-constant">JSON</span>.parse(result)
+</code></pre>
+<pre class="highlight python"><code><span class="hljs-keyword">import</span> requests
+
+r = requests.delete(<span class="hljs-string">'http://petstore.swagger.io/v2/user/{username}'</span>, params={
+  <span class="hljs-comment"># TODO</span>
+})
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"http://petstore.swagger.io/v2/user/{username}"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"DELETE"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><code>DELETE /user/{username}</code></p>
+<p><em>Delete user</em></p>
+<p>This can only be done by the logged in user.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The name that needs to be deleted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid username supplied</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>User not found</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+        
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="html">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">Node.JS</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

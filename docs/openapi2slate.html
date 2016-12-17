@@ -1,0 +1,654 @@
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Swagger Petstore</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+      <script src="pub/js/shins.js"></script>
+
+    
+  </head>
+
+  <body class="" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png">
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="source/images/logo.png">
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc">
+      </div>
+      
+        <ul class="toc-footer">
+          
+            <li>Swagger Petstore</li>
+          
+            <li><em>Version 1.0.0</em></li>
+          
+            <li><hr></li>
+          
+            <li><strong>undefined</strong></li>
+          
+            <li><em>Apache 2.0</em></li>
+          
+            <li><a href='undefined'>undefined</a></li>
+          
+            <li><a href='mailto:apiteam@swagger.io'>apiteam@swagger.io</a></li>
+          
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="swagger-petstore">Swagger Petstore</h1>
+<h2 id="general-information">General Information</h2>
+<h3 id="version-<code>1.0.0<-code>">Version <code>1.0.0</code></h3>
+<h3 id="schemes">Schemes</h3>
+<p><code>http</code></p>
+<p>###Host &amp; base path</p>
+<p><code>petstore.swagger.io/v2/</code></p>
+<h3 id="terms-of-service">Terms of Service</h3>
+<p><a href="http://swagger.io/terms/">http://swagger.io/terms/</a></p>
+<h3 id="external-resources">External resources</h3>
+<p><a href="http://swagger.io">Find out more about Swagger</a></p>
+<p>This is a sample server Petstore server.  You can find out more about Swagger at <a href="http://swagger.io">http://swagger.io</a> or on <a href="http://swagger.io/irc/">irc.freenode.net, #swagger</a>.  For this sample, you can use the api key <code>special-key</code> to test the authorization filters.</p>
+<h1 id="list-of-api-calls">List of API Calls</h1>
+<h2 id="pet">pet</h2>
+<p>
+<a href="#v2pet">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/pet</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2petfindByStatus">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/pet/findByStatus</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2petfindByTags">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/pet/findByTags</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2pet{petId}">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/pet/{petId}</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2pet{petId}">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/pet/{petId}</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2pet{petId}uploadImage">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/pet/{petId}/uploadImage</code>
+</strong>
+</a>
+</p>
+<h2 id="store">store</h2>
+<p>
+<a href="#v2storeinventory">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/store/inventory</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2storeorder">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/store/order</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2storeorder{orderId}">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/store/order/{orderId}</code>
+</strong>
+</a>
+</p>
+<h2 id="user">user</h2>
+<p>
+<a href="#v2user">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/user</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2usercreateWithArray">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/user/createWithArray</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2usercreateWithList">
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/user/createWithList</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2userlogin">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/user/login</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2userlogout">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/user/logout</code>
+</strong>
+</a>
+</p>
+<p>
+<a href="#v2user{username}">
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/user/{username}</code>
+</strong>
+</a>
+</p>
+<h1 id="pet">pet</h1>
+<div><a id="v2pet"></a></div>
+## Add a new pet to the store
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/pet</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>body</code><br/><em>required</em></p></td><td><p>Pet object that needs to be added to the store</p>
+</td><td></td><td>body</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>405</td> <td><p>Invalid input</p>
+</td> </tr>
+</table>
+<div><a id="v2petfindByStatus"></a></div>
+## Finds Pets by status
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/pet/findByStatus</code>
+</strong>
+</p>
+<p>Multiple status values can be provided with comma separated strings</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>status</code><br/><em>required</em></p></td><td><p>Status values that need to be considered for filter</p>
+</td><td><p>array</p></td><td>query</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid status value</p>
+</td> </tr>
+</table>
+<div><a id="v2petfindByTags"></a></div>
+## Finds Pets by tags
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/pet/findByTags</code>
+</strong>
+</p>
+<p>Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>tags</code><br/><em>required</em></p></td><td><p>Tags to filter by</p>
+</td><td><p>array</p></td><td>query</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid tag value</p>
+</td> </tr>
+</table>
+<div><a id="v2pet{petId}"></a></div>
+## Find pet by ID
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/pet/{petId}</code>
+</strong>
+</p>
+<p>Returns a single pet</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>petId</code><br/><em>required</em></p></td><td><p>ID of pet to return</p>
+</td><td><p>integer<br><em>int64</em></p></td><td>path</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid ID supplied</p>
+</td> </tr>
+<tr> <td>404</td> <td><p>Pet not found</p>
+</td> </tr>
+</table>
+<div><a id="v2pet{petId}"></a></div>
+## Updates a pet in the store with form data
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/pet/{petId}</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>petId</code><br/><em>required</em></p></td><td><p>ID of pet that needs to be updated</p>
+</td><td><p>integer<br><em>int64</em></p></td><td>path</td></tr>
+<tr><td><p><code>name</code><br/><em>optional</em></p></td><td><p>Updated name of the pet</p>
+</td><td><p>string</p></td><td>formData</td></tr>
+<tr><td><p><code>status</code><br/><em>optional</em></p></td><td><p>Updated status of the pet</p>
+</td><td><p>string</p></td><td>formData</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>405</td> <td><p>Invalid input</p>
+</td> </tr>
+</table>
+<div><a id="v2pet{petId}uploadImage"></a></div>
+## uploads an image
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/pet/{petId}/uploadImage</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>petId</code><br/><em>required</em></p></td><td><p>ID of pet to update</p>
+</td><td><p>integer<br><em>int64</em></p></td><td>path</td></tr>
+<tr><td><p><code>additionalMetadata</code><br/><em>optional</em></p></td><td><p>Additional data to pass to server</p>
+</td><td><p>string</p></td><td>formData</td></tr>
+<tr><td><p><code>file</code><br/><em>optional</em></p></td><td><p>file to upload</p>
+</td><td><p>file</p></td><td>formData</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+</table>
+<h1 id="store">store</h1>
+<div><a id="v2storeinventory"></a></div>
+## Returns pet inventories by status
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/store/inventory</code>
+</strong>
+</p>
+<p>Returns a map of status codes to quantities</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+</table>
+<div><a id="v2storeorder"></a></div>
+## Place an order for a pet
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/store/order</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>body</code><br/><em>required</em></p></td><td><p>order placed for purchasing the pet</p>
+</td><td></td><td>body</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid Order</p>
+</td> </tr>
+</table>
+<div><a id="v2storeorder{orderId}"></a></div>
+## Find purchase order by ID
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/store/order/{orderId}</code>
+</strong>
+</p>
+<p>For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>orderId</code><br/><em>required</em></p></td><td><p>ID of pet that needs to be fetched</p>
+</td><td><p>integer<br><em>int64</em></p></td><td>path</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid ID supplied</p>
+</td> </tr>
+<tr> <td>404</td> <td><p>Order not found</p>
+</td> </tr>
+</table>
+<h1 id="user">user</h1>
+<div><a id="v2user"></a></div>
+## Create user
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/user</code>
+</strong>
+</p>
+<p>This can only be done by the logged in user.</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>body</code><br/><em>required</em></p></td><td><p>Created user object</p>
+</td><td></td><td>body</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>default</td> <td><p>successful operation</p>
+</td> </tr>
+</table>
+<div><a id="v2usercreateWithArray"></a></div>
+## Creates list of users with given input array
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/user/createWithArray</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>body</code><br/><em>required</em></p></td><td><p>List of user object</p>
+</td><td></td><td>body</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>default</td> <td><p>successful operation</p>
+</td> </tr>
+</table>
+<div><a id="v2usercreateWithList"></a></div>
+## Creates list of users with given input array
+<p>
+<strong>
+<code class="operation-method operation-method-POST">POST  /v2/user/createWithList</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>body</code><br/><em>required</em></p></td><td><p>List of user object</p>
+</td><td></td><td>body</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>default</td> <td><p>successful operation</p>
+</td> </tr>
+</table>
+<div><a id="v2userlogin"></a></div>
+## Logs user into the system
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/user/login</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>username</code><br/><em>required</em></p></td><td><p>The user name for login</p>
+</td><td><p>string</p></td><td>query</td></tr>
+<tr><td><p><code>password</code><br/><em>required</em></p></td><td><p>The password for login in clear text</p>
+</td><td><p>string</p></td><td>query</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid username/password supplied</p>
+</td> </tr>
+</table>
+<div><a id="v2userlogout"></a></div>
+## Logs out current logged in user session
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/user/logout</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>default</td> <td><p>successful operation</p>
+</td> </tr>
+</table>
+<div><a id="v2user{username}"></a></div>
+## Get user by user name
+<p>
+<strong>
+<code class="operation-method operation-method-GET">GET  /v2/user/{username}</code>
+</strong>
+</p>
+<h3 id="parameters">Parameters</h3>
+<table class="table-left-col-25">
+<tr> <th>Parameter</th> <th>Description</th> <th>Type</th> <th>In</th> </tr>
+<tr><td><p><code>username</code><br/><em>required</em></p></td><td><p>The name that needs to be fetched. Use user1 for testing.</p>
+</td><td><p>string</p></td><td>path</td></tr>
+</table>
+<h3 id="responses">Responses</h3>
+<table>
+<tr> <th>Code</th> <th>Description</th> </tr>
+<tr> <td>200</td> <td><p>successful operation</p>
+</td> </tr>
+<tr> <td>400</td> <td><p>Invalid username supplied</p>
+</td> </tr>
+<tr> <td>404</td> <td><p>User not found</p>
+</td> </tr>
+</table>
+<h1 id="responses">Responses</h1>
+<h1 id="definitions">Definitions</h1>
+<h2 id="(object)">(object)</h2>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h3 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>petid<-code>-(integer)"><code>petId</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>quantity<-code>-(integer)"><code>quantity</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>shipdate<-code>-(string)"><code>shipDate</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>status<-code>-(string,-enum)"><code>status</code> (string, enum)</h3></p>
+<div class="json-schema">
+<p>Order Status</p>
+<p>This element must be one of the following enum values:</p>
+<ul>
+<li><code>placed</code></li>
+<li><code>approved</code></li>
+<li><code>delivered</code></li>
+</ul>
+</div>
+<p><h3 id="<code>complete<-code>-(boolean)"><code>complete</code> (boolean)</h3></p>
+<div class="json-schema">
+<p>Default: <code>false</code></p>
+</div>
+</div>
+<h2 id="(object)">(object)</h2>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h3 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>name<-code>-(string)"><code>name</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+</div>
+<h2 id="(object)">(object)</h2>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h3 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>username<-code>-(string)"><code>username</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>firstname<-code>-(string)"><code>firstName</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>lastname<-code>-(string)"><code>lastName</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>email<-code>-(string)"><code>email</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>password<-code>-(string)"><code>password</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>phone<-code>-(string)"><code>phone</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>userstatus<-code>-(integer)"><code>userStatus</code> (integer)</h3></p>
+<div class="json-schema">
+<p>User Status</p>
+</div>
+</div>
+<h2 id="(object)">(object)</h2>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h3 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>name<-code>-(string)"><code>name</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+</div>
+<h2 id="(object)">(object)</h2>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h3 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>category<-code>-(object)"><code>category</code> (object)</h3></p>
+<div class="json-schema">
+<p>The <code>category</code> object has the following properties:</p>
+<p><h4 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h4></p>
+<div class="json-schema">
+</div>
+<p><h4 id="<code>name<-code>-(string)"><code>name</code> (string)</h4></p>
+<div class="json-schema">
+</div>
+</div>
+<p><h3 id="<code>name<-code>-(string,-required)"><code>name</code> (string, required)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>photourls<-code>-(array,-required)"><code>photoUrls</code> (array, required)</h3></p>
+<div class="json-schema">
+<p>All array elements must be of type:</p>
+<p><h4 id="(string)">(string)</h4></p>
+<div class="json-schema">
+</div>
+</div>
+<p><h3 id="<code>tags<-code>-(array)"><code>tags</code> (array)</h3></p>
+<div class="json-schema">
+<p>All array elements must be of type:</p>
+<p><h4 id="(object)">(object)</h4></p>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h5 id="<code>id<-code>-(integer)"><code>id</code> (integer)</h5></p>
+<div class="json-schema">
+</div>
+<p><h5 id="<code>name<-code>-(string)"><code>name</code> (string)</h5></p>
+<div class="json-schema">
+</div>
+</div>
+</div>
+<p><h3 id="<code>status<-code>-(string,-enum)"><code>status</code> (string, enum)</h3></p>
+<div class="json-schema">
+<p>pet status in the store</p>
+<p>This element must be one of the following enum values:</p>
+<ul>
+<li><code>available</code></li>
+<li><code>pending</code></li>
+<li><code>sold</code></li>
+</ul>
+</div>
+</div>
+<h2 id="(object)">(object)</h2>
+<div class="json-schema">
+<p>This object has the following properties:</p>
+<p><h3 id="<code>code<-code>-(integer)"><code>code</code> (integer)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>type<-code>-(string)"><code>type</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+<p><h3 id="<code>message<-code>-(string)"><code>message</code> (string)</h3></p>
+<div class="json-schema">
+</div>
+</div>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
