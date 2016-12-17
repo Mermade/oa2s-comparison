@@ -21,3 +21,8 @@ Only the example `petstore.json` has been used so far to compare each tool, whic
 ## TODO
 
 * Add PHP [swagger2slate](https://github.com/E96/swagger2slate)
+
+## Related, but non-Slate-based tools
+
+* [apidoc](https://github.com/owainlewis/apidoc/issues)
+* [swagger2markup](https://github.com/Swagger2Markup/swagger2markup)
