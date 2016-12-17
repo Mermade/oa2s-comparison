@@ -1,0 +1,14 @@
+{
+  "name": "oa2s-comparison",
+  "version": "1.0.0",
+  "description": "OpenApi-to-Slate tools comparison",
+  "main": "index.js",
+  "author": "Mike Ralphson",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "openapi2slate": "^1.0.0",
+    "swagger-to-slate": "^1.0.3",
+	"shins": "latest",
+	"widdershins": "latest"
+  }
+}

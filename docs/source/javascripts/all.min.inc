@@ -1,0 +1,10 @@
+<script src="/pub/js/lib/_jquery.min.js"></script>
+<script src="/pub/js/lib/_jquery_ui.min.js"></script>
+<script src="/pub/js/lib/_jquery.highlight.min.js"></script>
+<script src="/pub/js/lib/_jquery.tocify.min.js"></script>
+<script src="/pub/js/lib/_lunr.min.js"></script>
+<script src="/pub/js/lib/_imagesloaded.min.js"></script>
+<script src="/pub/js/lib/_energize.min.js"></script>
+<script src="/pub/js/app/_lang.min.js"></script>
+<script src="/pub/js/app/_search.min.js"></script>
+<script src="/pub/js/app/_toc.min.js"></script>
