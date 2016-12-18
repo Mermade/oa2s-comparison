@@ -1267,7 +1267,7 @@ Status|Meaning|Description
   "id": 0,
   "petId": 0,
   "quantity": 0,
-  "shipDate": "2016-12-18T13:22:54Z",
+  "shipDate": "2016-12-18T13:54:03Z",
   "status": "placed",
   "complete": false
 }
@@ -1278,7 +1278,7 @@ Status|Meaning|Description
   <id>0</id>
   <petId>0</petId>
   <quantity>0</quantity>
-  <shipDate>2016-12-18T13:22:54Z</shipDate>
+  <shipDate>2016-12-18T13:54:03Z</shipDate>
   <status>placed</status>
   <complete>false</complete>
 </Order>
@@ -1390,7 +1390,7 @@ Status|Meaning|Description
   "id": 0,
   "petId": 0,
   "quantity": 0,
-  "shipDate": "2016-12-18T13:22:54Z",
+  "shipDate": "2016-12-18T13:54:03Z",
   "status": "placed",
   "complete": false
 }
@@ -1401,7 +1401,7 @@ Status|Meaning|Description
   <id>0</id>
   <petId>0</petId>
   <quantity>0</quantity>
-  <shipDate>2016-12-18T13:22:54Z</shipDate>
+  <shipDate>2016-12-18T13:54:03Z</shipDate>
   <status>placed</status>
   <complete>false</complete>
 </Order>
