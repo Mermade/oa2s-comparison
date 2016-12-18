@@ -30,7 +30,7 @@ shins.render(inputStr,options,function(err,str){
 });
 
 inputStr = widdershins.convert(petstore,{});
-fs.writeFileSync('./output/widdershins.md','utf8');
+fs.writeFileSync('./output/widdershins.md',inputStr,'utf8');
 shins.render(inputStr,options,function(err,str){
   if (err) {
   	console.log(JSON.stringify(err,null,2));
