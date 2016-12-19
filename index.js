@@ -29,6 +29,17 @@ shins.render(inputStr,options,function(err,str){
   fs.writeFileSync('./docs/openapi2slate.html',str,'utf8');
 });
 
+// convert petstore using swagger2slate fork hosted on heroku
+
+inputStr = fs.readFileSync('./output/swagger2slate.md','utf8');
+
+shins.render(inputStr,options,function(err,str){
+  if (err) {
+    console.log(JSON.stringify(err,null,2));
+  }
+  fs.writeFileSync('./docs/swagger2slate.html',str,'utf8');
+});
+
 inputStr = widdershins.convert(petstore,{});
 fs.writeFileSync('./output/widdershins.md',inputStr,'utf8');
 shins.render(inputStr,options,function(err,str){
